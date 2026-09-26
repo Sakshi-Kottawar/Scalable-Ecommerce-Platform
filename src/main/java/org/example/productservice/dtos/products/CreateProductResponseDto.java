@@ -2,6 +2,7 @@ package org.example.productservice.dtos.products;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.example.productservice.models.Category;
 import org.example.productservice.models.Product;
 
 @Getter
@@ -12,6 +13,7 @@ public class CreateProductResponseDto {
     private String description;
     private double price;
     private String imageUrl;
+    private String categoryName;
 
     public static CreateProductResponseDto fromProduct(Product product) {
         if (product == null) {
@@ -24,7 +26,7 @@ public class CreateProductResponseDto {
         responseDto.setTitle(product.getTitle());
         responseDto.setPrice(product.getPrice());
         responseDto.setImageUrl(product.getImageUrl());
-
+        responseDto.setCategoryName(product.getCategory().getName());
         return responseDto;
     }
 

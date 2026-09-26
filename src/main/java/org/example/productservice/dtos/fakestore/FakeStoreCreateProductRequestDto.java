@@ -2,6 +2,7 @@ package org.example.productservice.dtos.fakestore;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.example.productservice.models.Category;
 import org.example.productservice.models.Product;
 
 @Getter
@@ -17,7 +18,8 @@ public class FakeStoreCreateProductRequestDto {
         FakeStoreCreateProductRequestDto fakeStoreCreateProductRequestDto = new FakeStoreCreateProductRequestDto();
         fakeStoreCreateProductRequestDto.title = product.getTitle();
         fakeStoreCreateProductRequestDto.description = product.getDescription();
-        fakeStoreCreateProductRequestDto.category = product.getCategory();
+        Category category = product.getCategory();
+        fakeStoreCreateProductRequestDto.category = category == null ? null : category.getName();
         fakeStoreCreateProductRequestDto.price = product.getPrice();
         fakeStoreCreateProductRequestDto.image = product.getImageUrl();
 

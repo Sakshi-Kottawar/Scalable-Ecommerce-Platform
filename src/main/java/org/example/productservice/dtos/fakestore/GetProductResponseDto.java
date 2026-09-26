@@ -3,6 +3,7 @@ package org.example.productservice.dtos.fakestore;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.example.productservice.models.Category;
 import org.example.productservice.models.Product;
 
 @Getter
@@ -21,7 +22,8 @@ public class GetProductResponseDto {
         getProductResponseDto.setDescription(product.getDescription());
         getProductResponseDto.setImage(product.getImageUrl());
         getProductResponseDto.setPrice(product.getPrice());
-        getProductResponseDto.setCategory(product.getCategory());
+        Category category = product.getCategory();
+        getProductResponseDto.setCategory(category == null ? null : category.getName());
         getProductResponseDto.setTitle(product.getTitle());
 
         return getProductResponseDto;
