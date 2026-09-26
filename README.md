@@ -78,7 +78,3 @@ See the individual service source controllers and service READMEs for request/re
 ## Tests
 
 Run a service's tests from its directory with `./mvnw test`. The current test suites primarily contain Spring application context-load tests; broader API and integration coverage is still needed.
-
-## Current scope
-
-This repository does not currently include Kafka or Elasticsearch integration, Docker/Compose files, Kubernetes manifests, AWS deployment configuration, or database initialization scripts. Those are not part of the current checked-in implementation.
